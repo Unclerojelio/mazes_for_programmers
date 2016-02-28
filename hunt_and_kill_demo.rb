@@ -7,3 +7,6 @@ HuntAndKill.on(grid)
 filename = "hunt_and_kill.png"
 grid.to_png.save(filename)
 puts "saved to #{filename}"
+
+deadends = grid.deadends
+puts "#{deadends.count} dead-ends"
