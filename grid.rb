@@ -72,7 +72,7 @@ class Grid
 	end
 
 	def to_s
-		output = "+" + "---+" * columns + "\n"
+		output = "+" + "----+" * columns + "\n"
 
 		each_row do |row|
 			top = "|"
@@ -81,11 +81,16 @@ class Grid
 			row.each do |cell|
 				cell = Cell.new(-1,1) unless cell
 
-				body = " #{contents_of(cell)} "
+				length = contents_of(cell).length
+				if length == 2
+					body = " #{contents_of(cell)} "
+				else
+					body = " #{contents_of(cell)}  "
+				end
 				east_boundry = (cell.linked?(cell.east) ? " " : "|")
 				top << body << east_boundry
 
-				south_boundry = (cell.linked?(cell.south) ? "   " : "---")
+				south_boundry = (cell.linked?(cell.south) ? "    " : "----")
 				corner = "+"
 				bottom << south_boundry << corner
 			end
