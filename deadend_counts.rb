@@ -6,7 +6,12 @@ require 'wilsons'
 require 'hunt_and_kill'
 require 'recursive_backtracker'
 
-algorithms = [BinaryTree, Sidewinder, AldousBroder, Wilsons, HuntAndKill, RecursiveBacktracker]
+algorithms = [BinaryTree, 
+							Sidewinder,
+							AldousBroder, 
+							Wilsons, 
+							HuntAndKill, 
+							RecursiveBacktracker]
 
 tries = 100
 size = 20
