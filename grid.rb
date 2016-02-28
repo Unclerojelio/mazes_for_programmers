@@ -142,4 +142,25 @@ class Grid
 		
 		list
 	end
+	
+	def tees
+		list = []
+		
+		each_cell do |cell|
+			list << cell if cell.links.count == 3
+		end
+		
+		list
+	end
+	
+	def four_ways
+		list = []
+		
+		each_cell do |cell|
+			list << cell if cell.links.count == 4
+		end
+		
+		list
+	end
+	
 end
