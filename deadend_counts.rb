@@ -4,8 +4,9 @@ require 'sidewinder'
 require 'aldous_broder'
 require 'wilsons'
 require 'hunt_and_kill'
+require 'recursive_backtracker'
 
-algorithms = [BinaryTree, Sidewinder, AldousBroder, Wilsons, HuntAndKill]
+algorithms = [BinaryTree, Sidewinder, AldousBroder, Wilsons, HuntAndKill, RecursiveBacktracker]
 
 tries = 100
 size = 20
@@ -34,6 +35,6 @@ sorted_algorithms = algorithms.sort_by { |algorithm| -averages[algorithm] }
 
 sorted_algorithms.each do |algorithm|
 	percentage = averages[algorithm] * 100.0 / (size * size)
-	puts "%14s : %3d/%d (%d%%)" %
+	puts "%20s : %3d/%d (%d%%)" %
 		[algorithm, averages[algorithm], total_cells, percentage]
 end
